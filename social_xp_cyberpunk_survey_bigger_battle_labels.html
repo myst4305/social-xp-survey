@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOCIAL XP — Your Story Starts Here</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=JmOCD6vWWX0uNzmcc1EsXH2Ua25YiT4nLdA8x6bbY6tKO9EMTGYx9AU4oR1YJkSQd_pcmV1C6J6q-2Z_TX_rRxQl40IWMqwN84bF4Louzi_w60BPnC6mTrIwc6dxmDRi626_0qFP9Vhet3V2qlm0d9e0soKO70qMaZZO39hvf-UA43-XApEWm9FNLg_F4evptQrjhoFkjBfv7Z86I-xz_cJHcjv4Wfyg2WWpbFJY4LyCN_wdNsAWihVg3ZPS7kzTzPcDwNSoLdPqeovix7m_pK427ak4YM3_1cbJbeZngjBSkr-Z7YbjbCzDAbUP9RH0YRTt_xQkiQWkm7_eRmSsOQ" charset="UTF-8"></script><style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap');
+
+:root{
+  --bg:#030615;--panel:#071026;--panel2:#0a1430;--line:#294378;
+  --cyan:#35e8ff;--violet:#9d55ff;--pink:#ff4fca;--text:#f5f7ff;
+  --muted:#93a4d2;--green:#50f3b1;--danger:#ff7bbd;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#030615;color:var(--text);font-family:Inter,system-ui,sans-serif}
+body{overflow-x:hidden}
+body:before{
+ content:"";position:fixed;inset:0;z-index:-4;
+ background:radial-gradient(circle at 76% 12%,rgba(157,85,255,.25),transparent 31%),
+ radial-gradient(circle at 12% 76%,rgba(53,232,255,.12),transparent 34%),
+ linear-gradient(#030615,#050816);
+}
+body:after{
+ content:"";position:fixed;inset:0;z-index:-3;opacity:.22;
+ background-image:linear-gradient(rgba(80,130,220,.16) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(80,130,220,.16) 1px,transparent 1px);
+ background-size:48px 48px;
+ mask-image:linear-gradient(to bottom,black,transparent 86%);
+}
+button,input,textarea{font:inherit}
+button{color:inherit}
+.app{max-width:1480px;margin:auto;padding:18px 24px 30px}
+.top{height:68px;display:flex;align-items:center;justify-content:space-between;
+ border-bottom:1px solid rgba(100,140,255,.22);margin-bottom:18px}
+.brand{font-family:Orbitron;font-weight:800;font-size:25px;letter-spacing:2px}
+.brand span{color:var(--violet)}.brand b{color:var(--cyan)}
+.nav{font-family:Orbitron;font-size:11px;letter-spacing:2px;color:#cbd6ff}
+.research{border:1px solid #2651a0;border-radius:12px;padding:10px 16px;background:rgba(8,20,50,.7);font-size:12px;color:#bcd1ff}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);margin-right:8px}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:18px}
+.side,.panel,.hero{border:1px solid rgba(73,113,220,.55);
+ background:linear-gradient(145deg,rgba(8,17,43,.96),rgba(4,10,26,.96));
+ box-shadow:0 20px 60px rgba(0,0,0,.3);border-radius:16px}
+.side{padding:18px;align-self:start;position:sticky;top:15px}
+.side h3,.mapmini h3{font-family:Orbitron;font-size:12px;letter-spacing:1.8px;margin:0 0 20px}
+.level{position:relative;display:flex;gap:12px;padding:11px 8px;margin:4px 0;border-radius:12px;color:#6e82b6;transition:.2s}
+.level:not(:last-child):after{content:"";position:absolute;left:21px;top:50px;width:1px;height:22px;background:#24345d}
+.level.active{background:linear-gradient(90deg,rgba(127,65,255,.35),rgba(21,153,255,.08));color:#fff;border:1px solid rgba(95,91,255,.6);box-shadow:0 0 22px rgba(120,70,255,.08)}
+.level.done{color:#b8d5ff}
+.icon{width:34px;height:34px;border-radius:50%;border:1px solid #425888;display:grid;place-items:center;font-size:14px;flex:none}
+.active .icon{border-color:var(--cyan);box-shadow:0 0 18px rgba(53,232,255,.3)}
+.ltxt b{display:block;font-family:Orbitron;font-size:10px;letter-spacing:1px}
+.ltxt span{display:block;font-size:10px;margin-top:3px}
+.content{min-width:0}
+.hero{padding:20px 24px;min-height:132px;position:relative;overflow:hidden;
+ background:radial-gradient(circle at 75% 50%,rgba(157,85,255,.2),transparent 30%),linear-gradient(110deg,#07132e,#081735)}
+.hero:after{content:"";position:absolute;right:-80px;top:-100px;width:420px;height:250px;
+ background:linear-gradient(135deg,transparent 45%,rgba(53,232,255,.09) 46%,transparent 48%),
+ linear-gradient(45deg,transparent 45%,rgba(157,85,255,.13) 46%,transparent 48%);
+ transform:rotate(-8deg)}
+.eyebrow{font-family:Orbitron;color:var(--violet);font-size:12px;letter-spacing:2px}
+.hero h1{font-family:Orbitron;font-size:34px;margin:5px 0 6px;letter-spacing:1px}
+.hero p{color:#c0cbed;margin:0;max-width:760px}
+.xp{position:absolute;right:25px;top:26px;color:var(--cyan);font-family:Orbitron;font-size:13px;z-index:1}
+.main{margin-top:16px;display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
+.panel{padding:22px}
+.panel h2{font-family:Orbitron;font-size:15px;letter-spacing:1px;margin:0 0 5px}
+.sub{color:var(--muted);font-size:12px;margin-bottom:18px}
+.tiny{font-size:10px;color:#7588b8;letter-spacing:.5px}\n.battle-side{font-family:Orbitron;font-size:16px;font-weight:800;letter-spacing:2px;color:var(--cyan);margin-bottom:8px;text-shadow:0 0 12px rgba(53,232,255,.22)}
+.question{font-size:20px;line-height:1.45;font-weight:600;margin:18px 0 20px}
+.options{display:grid;gap:10px}
+.opt{cursor:pointer;border:1px solid #294378;background:linear-gradient(100deg,rgba(13,28,62,.9),rgba(7,15,36,.8));
+ color:#dce5ff;border-radius:11px;padding:14px;text-align:left;transition:.18s;position:relative}
+.opt:hover{transform:translateX(3px);border-color:#557bd0}
+.opt.selected{border-color:var(--cyan);background:linear-gradient(100deg,rgba(25,65,101,.75),rgba(26,16,65,.8));box-shadow:0 0 22px rgba(53,232,255,.1)}
+.opt.selected:after{content:"✓";position:absolute;right:14px;color:var(--cyan);font-weight:800}
+.multi-note{font-size:11px;color:#8ea4d8;margin-top:-10px;margin-bottom:12px}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.scale .opt{text-align:center;padding:18px 8px;font-family:Orbitron}
+.scale-labels{display:flex;justify-content:space-between;color:#7184b3;font-size:10px;margin-top:8px}
+.text{width:100%;min-height:150px;resize:vertical;background:#050c20;border:1px solid #294378;color:white;border-radius:11px;padding:14px;outline:none}
+.text:focus{border-color:var(--cyan);box-shadow:0 0 20px rgba(53,232,255,.08)}
+.rightbox{display:flex;flex-direction:column;gap:14px}
+.avatar{height:230px;border-radius:14px;position:relative;overflow:hidden;border:1px solid #294378;
+ background:radial-gradient(circle at 50% 35%,rgba(157,85,255,.35),transparent 24%),linear-gradient(145deg,#0a1538,#04091c)}
+.avatar:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-50px;top:-60px;
+ background:rgba(157,85,255,.13);filter:blur(8px);box-shadow:0 0 70px rgba(157,85,255,.25)}
+.orb{position:absolute;width:105px;height:105px;border-radius:50%;background:rgba(54,235,255,.16);filter:blur(15px);left:50%;top:34px;transform:translateX(-50%)}
+.person{position:absolute;left:50%;bottom:-12px;transform:translateX(-50%);width:130px;height:155px;border-radius:60px 60px 25px 25px;
+ background:linear-gradient(120deg,#111b3d,#161d48);box-shadow:0 0 35px rgba(157,85,255,.28)}
+.person:before{content:"";position:absolute;left:28px;top:-38px;width:74px;height:74px;border-radius:50%;
+ background:linear-gradient(140deg,#222d61,#090d22);border:2px solid #4e5fa1}
+.person:after{content:"";position:absolute;left:37px;top:-18px;width:56px;height:17px;border-radius:14px;
+ background:#0b1129;box-shadow:0 0 0 2px #39dfff,0 0 15px #39dfff}
+.avatar-caption{position:absolute;bottom:12px;left:14px;font-family:Orbitron;font-size:10px;color:#b9c8ff;letter-spacing:1px}
+.mapmini{padding:16px}
+.journey{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.node{padding:7px 9px;border:1px solid #2a4170;border-radius:8px;font-size:9px;color:#8195c4}
+.node.on{border-color:var(--cyan);color:white;box-shadow:0 0 14px rgba(53,232,255,.12)}
+.arrow{color:#526a9e}
+.quote{font-size:12px;color:#8397c8;line-height:1.6;text-align:center;padding:10px}
+.bottom{display:flex;align-items:center;gap:18px;margin-top:16px}
+.player{font-family:Orbitron;font-size:10px;color:#9bb0e2;white-space:nowrap}
+.bar{height:8px;flex:1;border-radius:10px;background:#0b1735;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--violet),var(--cyan));box-shadow:0 0 15px rgba(53,232,255,.4);transition:.3s}
+.next{margin-top:18px;width:100%;border:0;border-radius:12px;padding:15px;font-family:Orbitron;font-weight:700;letter-spacing:1px;color:white;
+ background:linear-gradient(90deg,#7736e8,#20bfe7);cursor:pointer;box-shadow:0 8px 25px rgba(98,50,230,.25)}
+.next:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.error{color:var(--danger);font-size:12px;margin-top:10px}
+.intro{min-height:70vh;display:grid;place-items:center}
+.intro-card{text-align:center;max-width:900px;padding:70px 35px}
+.intro-card h1{font-family:Orbitron;font-size:clamp(42px,7vw,82px);margin:8px 0;color:white;text-shadow:0 0 35px rgba(157,85,255,.45)}
+.intro-card h2{font-family:Orbitron;color:var(--cyan);font-size:clamp(20px,3vw,34px);letter-spacing:4px;margin:0 0 22px}
+.intro-card p{color:#b6c3e5;max-width:650px;margin:12px auto;line-height:1.7}
+.start{margin-top:25px;border:1px solid rgba(53,232,255,.65);padding:16px 28px;border-radius:12px;background:linear-gradient(90deg,#7736e8,#20bfe7);
+font-family:Orbitron;font-weight:800;letter-spacing:1px;cursor:pointer;box-shadow:0 0 35px rgba(77,90,255,.25)}
+.privacy{font-size:11px!important;color:#8193bd!important;max-width:650px!important}
+.finish{text-align:center;padding:55px 25px}
+.finish h1{font-family:Orbitron;font-size:38px;margin:8px 0 16px}
+.finish p{color:#aebce0;max-width:680px;margin:10px auto 20px;line-height:1.65}
+.profile{display:inline-block;padding:12px 18px;border:1px solid var(--cyan);border-radius:10px;color:white;font-family:Orbitron;letter-spacing:1px;background:rgba(53,232,255,.06);box-shadow:0 0 25px rgba(53,232,255,.1)}
+.result-orb{width:120px;height:120px;margin:0 auto 20px;border-radius:50%;background:radial-gradient(circle,#b27cff 0 8%,rgba(157,85,255,.25) 28%,transparent 70%);filter:drop-shadow(0 0 30px rgba(157,85,255,.45))}
+.fade{animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:950px){.layout{grid-template-columns:1fr}.side{display:none}.main{grid-template-columns:1fr}.xp{position:static;margin-top:15px;display:block}.hero h1{font-size:27px}}
+@media(max-width:600px){.app{padding:10px}.top{height:auto;padding:8px 0;gap:10px}.nav{display:none}.hero{padding:17px}.question{font-size:18px}.battle-side{font-size:14px}.panel{padding:16px}.bottom{gap:8px}.player{display:none}.scale{gap:5px}.scale .opt{padding:14px 5px;font-size:12px}.intro-card{padding:45px 18px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand">◈ SOCIAL <span>XP</span></div>
+  <div class="nav">PLAY&nbsp;&nbsp; / &nbsp;&nbsp;ANSWER&nbsp;&nbsp; / &nbsp;&nbsp;EXPLORE</div>
+  <div class="research"><span class="dot"></span><b>RESEARCH MODE</b></div>
+</header>
+<div id="root"></div>
+</div>
+
+<script>
+/* Add your Google Apps Script Web App /exec URL here before collecting responses. */
+const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbzvYs0vzn-tOyS_NP56UrfUXHhP787yCvULn7xRayX3HAed3IPQ4ARe1uMT5bk0fbW4XA/exec";
+
+const battles = [
+ ["BATTLE 01","START A CONVERSATION","How comfortable would you feel starting a conversation with another player?","How comfortable would you feel starting a conversation with another person?"],
+ ["BATTLE 02","COMMUNICATE YOUR IDEAS","How comfortable would you feel communicating your ideas to other players?","How comfortable would you feel communicating your ideas to other people?"],
+ ["BATTLE 03","TALK TO STRANGERS","How comfortable would you feel talking with players you have never met?","How comfortable would you feel talking with people you have never met?"],
+ ["BATTLE 04","EXPRESS YOUR OPINION","How comfortable would you feel expressing your opinion during a team/group discussion?","How comfortable would you feel expressing your opinion during a group discussion?"],
+ ["BATTLE 05","ASK FOR HELP","How comfortable would you feel asking another player for help?","How comfortable would you feel asking another person for help?"],
+ ["BATTLE 06","SOCIAL CONFIDENCE","How socially confident do you generally feel while interacting with other players?","How socially confident do you generally feel during face-to-face social interactions?"]
+];
+
+const whyQs = [
+ ["sharedGoal","When working toward a shared goal, how much does that environment affect how comfortable you feel communicating?"],
+ ["teamwork","How much does teamwork affect your comfort communicating?"],
+ ["judgement","How much does worry about being judged affect your comfort communicating?"],
+ ["familiarity","How much does familiarity with the people around you affect your comfort?"],
+ ["anonymity","How much does anonymity affect how comfortable you feel expressing yourself?"]
+];
+
+const sections = [
+ ["PLAYER PROFILE","Tell us about yourself.","◉"],
+ ["GAMING LOADOUT","Your gaming habits & preferences.","◈"],
+ ["COMMS","How you communicate.","⌁"],
+ ["BATTLES","Online vs face-to-face.","✦"],
+ ["WHY?","Factors that shape comfort.","◎"],
+ ["SOCIAL BRIDGE","Gaming beyond the game.","⇄"],
+ ["FINAL BOSS","One last reflection.","◆"],
+ ["QUEST COMPLETE","Your research profile.","✧"]
+];
+
+const steps = [
+ {section:0,type:"consent",key:"consent",title:"Do you agree to participate in this academic research study?",opts:["YES, I AGREE","NO, I DO NOT AGREE"]},
+ {section:0,type:"text",key:"name",title:"What should we call you?"},
+ {section:0,type:"single",key:"age",title:"What is your age?",opts:["18–20","21–23","24–26","27–30","31+"]},
+ {section:0,type:"single",key:"status",title:"What best describes your current status?",opts:["Student","Working","Student + Working","Other"]},
+ {section:1,type:"single",key:"yearsPlaying",title:"How long have you been playing online multiplayer games?",opts:["Less than 1 year","1–2 years","3–5 years","6+ years"]},
+ {section:1,type:"single",key:"frequency",title:"How often do you usually play?",opts:["Less than once a week","1–2 days/week","3–5 days/week","Almost daily"]},
+ {section:1,type:"single",key:"gamingPartners",title:"Who do you usually play with?",opts:["Mostly friends I know offline","Mostly online friends","Both","Mostly strangers"]},
+ {section:2,type:"single",key:"communicationMethod",title:"How do you usually communicate while gaming?",opts:["Voice chat","Text chat","Both","I usually don't communicate"]},
+ ...battles.flatMap((b,i)=>[
+   {section:3,type:"battle",key:"online"+(i+1),title:b[1],prompt:b[2],side:"ONLINE MODE"},
+   {section:3,type:"battle",key:"face"+(i+1),title:b[1],prompt:b[3],side:"REAL-LIFE MODE"}
+ ]),
+ ...whyQs.map(q=>({section:4,type:"why",key:q[0],title:q[1]})),
+ {section:5,type:"single",key:"easierDisagree",title:"Where would you personally find it easier to disagree with someone?",opts:["During online gaming","Face-to-face","About the same","It depends"]},
+ {section:5,type:"single",key:"gamingFriendship",title:"Have you ever formed a friendship through gaming that continued outside the game?",opts:["Yes","No","Not sure"]},
+ {section:5,type:"single",key:"gamingTransfer",title:"Have gaming communication or teamwork skills ever affected how you interact outside gaming?",opts:["Yes","No","Not sure"]},
+ {section:5,type:"single",key:"transferFactor",title:"Which part of gaming, if any, feels most transferable to real-life social situations?",opts:["Communication","Teamwork","Confidence expressing opinions","Making new connections","Nothing in particular","Not sure"]},
+ {section:5,type:"single",key:"interviewWillingness",title:"Would you be willing to participate in a short follow-up interview?",opts:["Yes","No"]},
+ {section:6,type:"text",key:"finalResponse",title:"Describe, in your own words, what feels different about talking to people online versus face-to-face."}
+];
+
+let idx=0, answers={}, started=false, xp=0;
+
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function total(){return steps.length}
+function current(){return steps[idx]}
+function renderIntro(){
+ document.getElementById("root").innerHTML=`<div class="panel intro intro-card fade">
+   <div class="eyebrow">RESEARCH MODE // PLAYER JOURNEY</div>
+   <h1>SOCIAL XP</h1>
+   <h2>YOUR STORY STARTS HERE.</h2>
+   <p>This isn't a test.<br>It's a journey through your social worlds.</p>
+   <p class="privacy">Your responses will be used for academic research. Your name will be collected only for participant identification and possible follow-up interviews. Research findings will be reported without identifying individual participants.</p>
+   <button class="start" id="startBtn">START QUEST →</button>
+ </div>`;
+ document.getElementById("startBtn").onclick=()=>{started=true;idx=0;render()};
+}
+function render(){
+ const q=current(), s=q.section, pct=Math.round((idx/total())*100);
+ const side=sections.map((x,i)=>`<div class="level ${i===s?"active":i<s?"done":""}">
+   <div class="icon">${i<s?"✓":i===s?x[2]:"🔒"}</div>
+   <div class="ltxt"><b>LEVEL ${String(i+1).padStart(2,"0")}</b><span>${x[0]}</span><span>${x[1]}</span></div>
+ </div>`).join("");
+ const selected=answers[q.key];
+ let content="";
+ if(q.type==="text"){
+   content=`<textarea id="free" class="text" placeholder="Type your response here...">${esc(selected||"")}</textarea>`;
+ }else if(q.type==="battle"){
+   const opts=["1","2","3","4","5"];
+   content=`<div class="multi-note">Rate your comfort level: 1 = Very uncomfortable • 5 = Very comfortable</div>
+   <div class="scale">${opts.map(v=>`<button class="opt ${selected===v?"selected":""}" data-v="${v}">${v}</button>`).join("")}</div>
+   <div class="scale-labels"><span>Very uncomfortable</span><span>Neutral</span><span>Very comfortable</span></div>`;
+ }else if(q.type==="why"){
+   const opts=["1","2","3","4","5"];
+   content=`<div class="multi-note">1 = Not at all • 3 = Neutral • 5 = Very much</div>
+   <div class="scale">${opts.map(v=>`<button class="opt ${selected===v?"selected":""}" data-v="${v}">${v}</button>`).join("")}</div>`;
+ }else{
+   content=`<div class="options">${q.opts.map(v=>`<button class="opt ${selected===v?"selected":""}" data-v="${esc(v)}">${esc(v)}</button>`).join("")}</div>`;
+ }
+ const battleLabel=q.type==="battle"?`<div class="battle-side">${q.side}</div>`:"";
+ document.getElementById("root").innerHTML=`<div class="layout fade">
+ <aside class="side"><h3>YOUR JOURNEY</h3>${side}<div class="quote">Different players.<br>Same game. Unique experiences.</div></aside>
+ <main class="content">
+   <section class="hero"><div class="eyebrow">LEVEL ${String(s+1).padStart(2,"0")} / MISSION ${String(idx+1).padStart(2,"0")}</div>
+   <h1>${sections[s][0]}</h1><p>${sections[s][1]}</p><span class="xp">★ +10 XP&nbsp; FOR THIS MISSION</span></section>
+   <div class="main">
+    <section class="panel">
+      ${battleLabel}
+      <div class="tiny">MISSION ${String(idx+1).padStart(2,"0")} / ${total()}</div>
+      <div class="question">${esc(q.title)}</div>
+      ${content}
+      <div id="err" class="error"></div>
+      <button id="next" class="next">${idx===total()-1?"COMPLETE QUEST":"LOCK ANSWER & CONTINUE"} →</button>
+    </section>
+    <section class="rightbox">
+      <div class="avatar"><div class="orb"></div><div class="person"></div><div class="avatar-caption">PLAYER 01 · YOUR STORY STARTS HERE</div></div>
+      <div class="panel mapmini"><h3>MISSION MAP</h3><div class="journey">${sections.map((x,i)=>`<div class="node ${i===s?"on":i<s?"done":""}">${x[2]} ${x[0]}</div>`).join('<span class="arrow">›</span>')}</div></div>
+      <div class="panel"><div class="tiny">MISSION DATA</div>
+       <p style="font-size:12px;line-height:1.6;color:#aab8dc;margin:8px 0">
+       <b>QUEST</b><br>Social XP<br><br><b>ROUND</b><br>${String(idx+1).padStart(2,"0")} / ${total()}<br><br><b>MODE</b><br>DUAL WORLD<br><br><b>XP</b><br>+${xp}
+       </p>
+      </div>
+      <div class="panel"><div class="tiny">RESEARCH NOTE</div><p style="font-size:12px;line-height:1.6;color:#aab8dc;margin:8px 0">There are no right or wrong answers. This study explores social interaction in online gaming compared with face-to-face situations.</p></div>
+    </section>
+   </div>
+   <div class="bottom"><div class="player">PLAYER 01&nbsp; | &nbsp;${idx+1} / ${total()}</div><div class="bar"><div class="fill" style="width:${Math.max(1,pct)}%"></div></div><div class="player">${Math.max(1,pct)}%</div></div>
+ </main></div>`;
+ document.querySelectorAll(".opt").forEach(btn=>btn.onclick=()=>{
+   answers[q.key]=btn.dataset.v; render();
+ });
+ document.getElementById("next").onclick=next;
+}
+function next(){
+ const q=current();
+ let v=answers[q.key];
+ if(q.type==="text"){v=document.getElementById("free").value.trim();answers[q.key]=v}
+ if(v===undefined || v===""){
+   document.getElementById("err").textContent="Choose an option to continue.";
+   return;
+ }
+ if(q.key==="consent" && v==="NO, I DO NOT AGREE"){finishConsent();return}
+ xp+=10;
+ if(idx<total()-1){idx++;render();window.scrollTo({top:0,behavior:"smooth"})}
+ else finish();
+}
+function avg(keys){
+ const vals=keys.map(k=>Number(answers[k])).filter(n=>Number.isFinite(n));
+ return vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:0;
+}
+function finishConsent(){
+ document.getElementById("root").innerHTML=`<div class="panel finish fade"><div class="eyebrow">SOCIAL XP · RESEARCH MODE</div><div class="result-orb"></div><h1>QUEST PAUSED</h1><p>Thank you for your time. The quest cannot continue without consent.</p></div>`;
+}
+async function finish(){
+ const onlineKeys=[1,2,3,4,5,6].map(n=>"online"+n);
+ const faceKeys=[1,2,3,4,5,6].map(n=>"face"+n);
+ const onlineAverage=avg(onlineKeys), faceAverage=avg(faceKeys);
+ let researchProfile="";
+ if(onlineAverage>=3.5 && faceAverage>=3.5) researchProfile="SOCIAL ALL-ROUNDER";
+ else if(onlineAverage>=3.5 && faceAverage<3.5) researchProfile="DIGITAL CONNECTOR";
+ else if(onlineAverage<3.5 && faceAverage>=3.5) researchProfile="REAL-WORLD CONNECTOR";
+ else researchProfile="QUIET STRATEGIST";
+ const descriptions={
+  "SOCIAL ALL-ROUNDER":"You reported similar levels of comfort with social interaction in online and face-to-face situations.",
+  "DIGITAL CONNECTOR":"You reported greater comfort with social interaction in the online environment than in face-to-face situations.",
+  "REAL-WORLD CONNECTOR":"You reported greater comfort with social interaction in face-to-face situations than in the online environment.",
+  "QUIET STRATEGIST":"You reported lower comfort with social interaction in both environments relative to the study's 3.5 threshold."
+ };
+ const payload={
+  timestamp:new Date().toISOString(), name:answers.name||"", age:answers.age||"", status:answers.status||"",
+  yearsPlaying:answers.yearsPlaying||"", frequency:answers.frequency||"", gamingPartners:answers.gamingPartners||"",
+  communicationMethod:answers.communicationMethod||"", onlineScores:onlineKeys.map(k=>answers[k]||""),
+  faceScores:faceKeys.map(k=>answers[k]||""), onlineAverage, faceAverage, researchProfile,
+  sharedGoal:answers.sharedGoal||"", teamwork:answers.teamwork||"", judgement:answers.judgement||"",
+  familiarity:answers.familiarity||"", anonymity:answers.anonymity||"",
+  scenario01:answers.scenario01||"",scenario02:answers.scenario02||"",scenario03:answers.scenario03||"",
+  easierToDisagree:answers.easierDisagree||"",gamingFriendship:answers.gamingFriendship||"",
+  gamingTransfer:answers.gamingTransfer||"",transferFactor:answers.transferFactor||"",
+  interviewWillingness:answers.interviewWillingness||"",finalResponse:answers.finalResponse||"",
+  allResponses:answers
+ };
+ document.getElementById("root").innerHTML=`<div class="panel finish fade">
+   <div class="eyebrow">SOCIAL XP · RESEARCH MODE</div><div class="result-orb"></div>
+   <h1>QUEST COMPLETE</h1><div class="profile">${researchProfile}</div>
+   <p>${descriptions[researchProfile]}</p>
+   <p class="tiny">This is a research profile based on your responses, not a score or judgment. There are no right or wrong answers.</p>
+   <p id="submitStatus" class="tiny">Saving your response to the research sheet…</p>
+ </div>`;
+ try{
+   if(GOOGLE_SHEETS_URL.includes("PASTE_YOUR")){
+     document.getElementById("submitStatus").textContent="Prototype complete. Google Sheets is not connected yet.";
+   }else{
+     await fetch(GOOGLE_SHEETS_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
+     document.getElementById("submitStatus").textContent="✓ Response submitted. Thank you for participating.";
+   }
+ }catch(e){
+   document.getElementById("submitStatus").textContent="Response could not be confirmed. Please check the research sheet connection.";
+ }
+}
+renderIntro();
+</script>
+</body>
+</html>
